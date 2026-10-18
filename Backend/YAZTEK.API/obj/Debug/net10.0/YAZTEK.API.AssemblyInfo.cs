@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("YAZTEK.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+969d7cac94dcf4bbb9345c2404db7590bb283f69")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c7369d54b801597f7fdf7e3a93bd112d00f2d23b")]
 [assembly: System.Reflection.AssemblyProductAttribute("YAZTEK.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("YAZTEK.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
