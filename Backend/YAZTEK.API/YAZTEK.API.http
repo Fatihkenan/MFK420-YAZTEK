@@ -1,0 +1,6 @@
+@YAZTEK.API_HostAddress = http://localhost:5020
+
+GET {{YAZTEK.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
