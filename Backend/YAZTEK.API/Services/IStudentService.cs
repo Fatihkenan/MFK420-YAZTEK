@@ -1,10 +1,14 @@
-﻿using YAZTEK.API.Entities;
+﻿using YAZTEK.API.DTOs;
 
 namespace YAZTEK.API.Services;
 
 public interface IStudentService
 {
-    Task<IEnumerable<Student>> GetAllStudentsAsync();
-    Task<Student?> GetStudentByIdAsync(int id);
-    Task AddStudentAsync(Student student);
+    Task<IEnumerable<StudentDto>> GetAllStudentsAsync();
+    Task<StudentDto?> GetStudentByIdAsync(int id);
+    Task<StudentDto> AddStudentAsync(CreateStudentDto createStudentDto);
+
+    // YENİ EKLENEN SATIRLAR
+    Task UpdateStudentAsync(int id, CreateStudentDto updateStudentDto);
+    Task DeleteStudentAsync(int id);
 }

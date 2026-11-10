@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using YAZTEK.API.Entities;
+using YAZTEK.API.DTOs;
 using YAZTEK.API.Services;
 
 namespace YAZTEK.API.Controllers;
@@ -15,7 +15,6 @@ public class StudentsController : ControllerBase
         _studentService = studentService;
     }
 
-    // GET: api/students (Tüm öğrencileri getirir)
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
@@ -23,7 +22,6 @@ public class StudentsController : ControllerBase
         return Ok(students);
     }
 
-    // GET: api/students/5 (Belirli bir öğrenciyi getirir)
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
@@ -34,13 +32,40 @@ public class StudentsController : ControllerBase
         return Ok(student);
     }
 
-    // POST: api/students (Yeni öğrenci ekler)
     [HttpPost]
-    public async Task<IActionResult> Create(Student student)
+    public async Task<IActionResult> Create(CreateStudentDto createStudentDto)
     {
-        await _studentService.AddStudentAsync(student);
+        var createdStudent = await _studentService.AddStudentAsync(createStudentDto);
+        return CreatedAtAction(nameof(GetById), new { id = createdStudent.Id }, createdStudent);
+    }
 
-        // Eklendikten sonra HTTP 201 Created döner ve veriyi gösterir
-        return CreatedAtAction(nameof(GetById), new { id = student.Id }, student);
+    // YENİ: PUT - Güncelleme İşlemi
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(int id, CreateStudentDto updateStudentDto)
+    {
+        try
+        {
+            await _studentService.UpdateStudentAsync(id, updateStudentDto);
+            return NoContent(); // 204 No Content: İşlem başarılı ama geriye veri dönmeye gerek yok.
+        }
+        catch (Exception ex)
+        {
+            return NotFound(ex.Message);
+        }
+    }
+
+    // YENİ: DELETE - Silme İşlemi
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        try
+        {
+            await _studentService.DeleteStudentAsync(id);
+            return NoContent();
+        }
+        catch (Exception ex)
+        {
+            return NotFound(ex.Message);
+        }
     }
 }

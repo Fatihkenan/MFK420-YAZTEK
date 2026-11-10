@@ -28,6 +28,18 @@ public class StudentRepository : IStudentRepository
         await _context.Students.AddAsync(student);
     }
 
+    // YENİ EKLENEN METOD
+    public void Update(Student student)
+    {
+        _context.Students.Update(student);
+    }
+
+    // YENİ EKLENEN METOD
+    public void Remove(Student student)
+    {
+        _context.Students.Remove(student);
+    }
+
     public async Task SaveChangesAsync()
     {
         await _context.SaveChangesAsync();
