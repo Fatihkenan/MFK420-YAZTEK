@@ -1,7 +1,10 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 using YAZTEK.API.Persistence;
 using YAZTEK.API.Repositories;
 using YAZTEK.API.Services;
+using YAZTEK.API.Validators;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
@@ -10,6 +13,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 builder.Services.AddScoped<IStudentRepository, StudentRepository>();
 builder.Services.AddScoped<IStudentService, StudentService>();
+
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddValidatorsFromAssemblyContaining<CreateStudentDtoValidator>();
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
