@@ -1,0 +1,11 @@
+{
+  "description": "Kendi izinli ve elle etiketlenmiş kayıtlarınızı kopyalayıp evaluation_manifest.json olarak kaydedin.",
+  "samples": [
+    {
+      "audio": "recordings/ornek-01.webm",
+      "referenceText": "Elle doğrulanmış referans metin.",
+      "expectedWordStatuses": ["correct", "correct", "correct", "correct"],
+      "expectedPauseAfterWordIndexes": []
+    }
+  ]
+}

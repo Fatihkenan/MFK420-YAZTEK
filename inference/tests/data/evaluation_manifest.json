@@ -1,0 +1,19 @@
+{
+  "source": "https://huggingface.co/datasets/Codyfederer/tr-full-dataset",
+  "license": "CC-BY-4.0 (dataset card declaration)",
+  "transcriptVerification": "Dataset-provided reference; not independently listened to or manually relabelled in this run.",
+  "samples": [
+    {
+      "audio": "segment_000000_speaker_0.wav",
+      "referenceText": "Herkese merhaba, yeni bir teknoloji turuyla karşınızdayım."
+    },
+    {
+      "audio": "segment_000001_speaker_0.wav",
+      "referenceText": "Dört Temmuz'u geride bıraktık."
+    },
+    {
+      "audio": "segment_000002_speaker_0.wav",
+      "referenceText": "Fakat yapay zekanın en önemli oyuncularından, yöneticilerinden biri olan Sam Altman'ın konuşmasını geride bırakamadık, geride bırakamadım."
+    }
+  ]
+}

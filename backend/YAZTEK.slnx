@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/YAZTEK.Api/YAZTEK.Api.csproj" />
+    <Project Path="src/YAZTEK.Application/YAZTEK.Application.csproj" />
+    <Project Path="src/YAZTEK.Domain/YAZTEK.Domain.csproj" />
+    <Project Path="src/YAZTEK.Infrastructure/YAZTEK.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/YAZTEK.Application.Tests/YAZTEK.Application.Tests.csproj" />
+  </Folder>
+</Solution>
